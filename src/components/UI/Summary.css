@@ -1,0 +1,14 @@
+.n {
+  height: 222px;
+  background-color: dimgrey;
+}
+
+.n div {
+  font-size: 555%;
+  position: relative;
+  left: 32%;
+  top: 19%;
+  color: aliceblue;
+  font-weight: bold;
+  font-style: oblique;
+}

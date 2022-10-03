@@ -1,0 +1,32 @@
+.gh {
+  height: 60px;
+  background: #799ddc;
+}
+
+.gh footer {
+  display: flex;
+  height: -webkit-fill-available;
+}
+
+.ope {
+  display: flex;
+  height: -webkit-fill-available;
+  justify-content: space-evenly;
+  flex-direction: row;
+  position: relative;
+  left: 111px;
+  font-size: 333%;
+}
+
+.lae {
+  display: flex;
+  position: relative;
+  left: 44%;
+}
+
+.lae a {
+  display: flex;
+  margin: 22px;
+}
+.lae a img {
+}
