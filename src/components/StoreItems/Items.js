@@ -10,7 +10,13 @@ const Items = (props) => {
             <h2>{props.title}</h2>
             <img src={props.img} alt="not found"></img>
             <p>$ {props.price}</p>
-            <AddItemButton value={"Add Item"}></AddItemButton>
+            <AddItemButton
+              title={props.title}
+              price={props.price}
+              img={props.img}
+              id={props.id}
+              value={"Add Item"}
+            ></AddItemButton>
           </div>
         </div>
       </div>

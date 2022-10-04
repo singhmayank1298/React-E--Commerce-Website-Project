@@ -1,7 +1,17 @@
+import { useContext } from "react";
+import CartContext from "../store/cart-container";
 import Button from "./Button";
 import "./Header.css";
 
 const Header = (props) => {
+  const ctx = useContext(CartContext);
+  const TotalItemsArray = ctx.itemsArray;
+
+  let TotalQuantitys = 0;
+  for (let i = 0; i < TotalItemsArray.length; i++) {
+    TotalQuantitys = TotalQuantitys + Number(TotalItemsArray[i].quantity);
+  }
+
   return (
     <>
       <div className="rrr">
@@ -11,7 +21,7 @@ const Header = (props) => {
             <span>Store</span>
             <span>About</span>
           </ul>
-          <Button onClick={props.onClick} value={"0"}></Button>
+          <Button onClick={props.onClick} value={TotalQuantitys}></Button>
         </div>
       </div>
     </>
