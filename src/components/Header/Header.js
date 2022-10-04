@@ -1,7 +1,7 @@
 import Button from "./Button";
 import "./Header.css";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <>
       <div className="rrr">
@@ -11,7 +11,7 @@ const Header = () => {
             <span>Store</span>
             <span>About</span>
           </ul>
-          <Button value={"0"}></Button>
+          <Button onClick={props.onClick} value={"0"}></Button>
         </div>
       </div>
     </>

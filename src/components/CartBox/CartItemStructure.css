@@ -1,0 +1,45 @@
+.sdf {
+  position: relative;
+  top: 111px;
+  left: 15px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 55px;
+  border-bottom: 1px solid black;
+  padding-bottom: 33px;
+  height: 50px;
+}
+
+.erted {
+  display: flex;
+  width: 23px;
+  position: relative;
+  left: 33px;
+  gap: 22px;
+}
+
+.erted img {
+  height: 77px;
+  position: relative;
+}
+
+.jhy {
+  position: relative;
+  display: flex;
+  left: 222px;
+  font-size: x-large;
+}
+
+.obh {
+  position: relative;
+  display: flex;
+  left: 317px;
+  font-size: x-large;
+}
+.obh span {
+  padding: 11px;
+}
+
+.obh button {
+  cursor: pointer;
+}

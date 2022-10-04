@@ -4,7 +4,7 @@ import CartIcon from "./CartIcon";
 const Button = (props) => {
   return (
     <>
-      <button className="ttt">
+      <button onClick={props.onClick} className="ttt">
         <CartIcon></CartIcon>
         {props.value}
       </button>

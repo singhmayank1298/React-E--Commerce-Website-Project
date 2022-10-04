@@ -1,7 +1,7 @@
 import "./FooterItems.css";
-import YoutubeImage from "../../Image/youtube img.jpg";
-import SpotifyImage from "../../Image/Spotify Logo.png";
-import FaceBookImage from "../../Image/Facebook Logo.png";
+import YoutubeImage from "../../Assets/youtube img.jpg";
+import SpotifyImage from "../../Assets/Spotify Logo.png";
+import FaceBookImage from "../../Assets/Facebook Logo.png";
 
 const FooterItems = (props) => {
   return (
