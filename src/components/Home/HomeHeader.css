@@ -1,0 +1,28 @@
+.Homes {
+  height: 222px;
+  background-color: dimgrey;
+}
+
+.button1 {
+  height: 122px;
+  width: 444px;
+  font-size: 44px;
+  position: relative;
+  top: -33px;
+  left: 522px;
+  border-color: aqua;
+  background-color: dimgray;
+  color: aliceblue;
+}
+
+.button2 {
+  border-color: aqua;
+  background-color: dimgrey;
+  width: 88px;
+  height: 77px;
+  position: relative;
+  top: 94px;
+  left: 259px;
+  border-radius: 133%;
+  cursor: pointer;
+}

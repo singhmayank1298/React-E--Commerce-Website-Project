@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { NavLink } from "react-router-dom";
 import CartContext from "../store/cart-container";
 import Button from "./Button";
 import "./Header.css";
@@ -17,9 +18,15 @@ const Header = (props) => {
       <div className="rrr">
         <div>
           <ul className="vv">
-            <span>Home</span>
-            <span>Store</span>
-            <span>About</span>
+            <NavLink activeClassName="active" to="/home">
+              Home
+            </NavLink>
+            <NavLink activeClassName="active" to="/store">
+              Store
+            </NavLink>
+            <NavLink activeClassName="active" to="/about">
+              About
+            </NavLink>
           </ul>
           <Button onClick={props.onClick} value={TotalQuantitys}></Button>
         </div>

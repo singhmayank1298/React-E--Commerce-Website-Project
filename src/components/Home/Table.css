@@ -1,0 +1,10 @@
+.nkfdmvi {
+  display: flex;
+  padding-top: 33px;
+  border-bottom: outset;
+  font-weight: 200;
+}
+
+.nkfdmvi button {
+  background-color: aqua;
+}

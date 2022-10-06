@@ -1,0 +1,26 @@
+.About {
+  display: block;
+  height: 574px;
+  font-size: 22px;
+}
+.About h1 {
+  text-align: center;
+}
+
+.njint {
+  display: flex;
+  height: 500px;
+  gap: 22px;
+  margin-left: 11%;
+}
+
+.njint img {
+  height: 333px;
+  border-radius: 1111px;
+}
+
+.njint p {
+  width: 877px;
+  border-radius: 1111px;
+  font-size: 22px;
+}

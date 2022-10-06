@@ -15,15 +15,18 @@
   display: flex;
   color: aliceblue;
   position: relative;
-  left: 40%;
+  left: 35%;
   cursor: pointer;
+  gap: 3px;
 }
 
-.vv span {
+.vv a {
   margin-left: 44%;
+  color: aliceblue;
 }
 
-.vv span:hover,
-.vv span:active {
-  background-color: #7bf312;
+.vv a:hover,
+.vv a.active {
+  color: rgb(127, 152, 234);
+  text-shadow: blanchedalmond;
 }
