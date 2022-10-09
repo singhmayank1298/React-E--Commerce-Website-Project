@@ -43,9 +43,24 @@ const CartProvider = (props) => {
     });
   };
 
+  const contactHandler = async (NewUserContect) => {
+    const response = await fetch(
+      "https://react-http-f431c-default-rtdb.firebaseio.com/contact.json",
+      {
+        method: "POST",
+        body: JSON.stringify(NewUserContect),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    console.log(response);
+  };
+
   const AllProps = {
     itemsArray: Products,
     Add: AddHandeler,
+    Contact: contactHandler,
   };
   console.log(AllProps);
   return (

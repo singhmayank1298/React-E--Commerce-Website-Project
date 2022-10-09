@@ -1,0 +1,36 @@
+.nsjs {
+  display: table-caption;
+  container-type: inline-size;
+  font-weight: 300;
+  position: relative;
+  left: 444px;
+  margin: 22px;
+}
+
+.nsjs input {
+  width: 555px;
+  border: double;
+  height: 33px;
+  border-radius: 33px;
+  margin-bottom: 22px;
+}
+.nsjs button {
+  width: 555px;
+  border: double;
+  height: 33px;
+  border-radius: 33px;
+  margin-bottom: 22px;
+  background-color: aquamarine;
+  cursor: pointer;
+}
+
+.nsjs div {
+  width: 555px;
+  font-weight: bold;
+  height: 33px;
+  position: relative;
+  left: 134px;
+  margin-bottom: 22px;
+
+  cursor: pointer;
+}
