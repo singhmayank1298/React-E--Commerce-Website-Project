@@ -1,0 +1,14 @@
+For fetching data or array from backend
+1=  Make a fetch function
+2= and make get request 
+4= store reponse in array 
+5= update array actual array
+
+
+on click on product fetch data on product detail page
+1= when click on product sent url path as id
+2= and use that id in productDetail page bu useParem and fetch that product detail form DB
+3= And show on screen
+
+
+

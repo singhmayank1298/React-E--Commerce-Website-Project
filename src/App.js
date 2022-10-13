@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Summary from "./components/UI/Summary";
 import "./App.css";
@@ -11,6 +11,7 @@ import CartProvider from "./components/store/CartProvider";
 import About from "./components/About/About";
 import Home from "./components/Home/Home";
 import Contact from "./components/Contact/Contect";
+import ProductDetailPage from "./components/ProductDetailPage/ProductDetailPage";
 
 function App() {
   const [CartVisible, setCartVisible] = useState(false);
@@ -26,22 +27,27 @@ function App() {
       <div className="body">
         <Header onClick={CartVisibleHandeler}></Header>
         <Summary></Summary>
+        <Switch>
+          <Route path="/about">
+            <About></About>
+          </Route>
 
-        <Route path="/about">
-          <About></About>
-        </Route>
+          <Route path="/home">
+            <Home></Home>
+          </Route>
 
-        <Route path="/home">
-          <Home></Home>
-        </Route>
+          <Route path="/store">
+            <StoreItems></StoreItems>
+          </Route>
 
-        <Route path="/store">
-          <StoreItems></StoreItems>
-        </Route>
+          <Route path="/contact">
+            <Contact></Contact>
+          </Route>
 
-        <Route path="/contact">
-          <Contact></Contact>
-        </Route>
+          <Route path="/product">
+            <ProductDetailPage></ProductDetailPage>
+          </Route>
+        </Switch>
 
         <FooterItems></FooterItems>
         {CartVisible === true

@@ -1,0 +1,91 @@
+.njni {
+  position: relative;
+  top: 44px;
+}
+
+.nwdwn {
+  display: flex;
+
+  position: relative;
+  left: 444px;
+  top: 144px;
+}
+
+.nwdwn img {
+  width: 122px;
+
+  margin: 33px;
+}
+
+.nwdwn div:hover {
+  transition: 2s; /* vary importent for zoom */
+  transform: scale(1.2); /* vary importent for zoom */
+  cursor: pointer;
+}
+
+.nwio {
+  display: flex;
+  position: relative;
+  top: -218px;
+  margin: 55px;
+  overflow: hidden;
+}
+
+.nwio img:hover {
+  cursor: pointer;
+  transition: 2s; /* vary importent for zoom */
+  transform: scale(1.2); /* vary importent for zoom */
+}
+
+.sdnidn {
+  position: relative;
+  top: -574px;
+  left: 373px;
+  color: aqua;
+  background-color: rgb(9, 55, 55);
+}
+
+.dsniu {
+  display: block;
+  position: relative;
+  top: -565px;
+  left: 70%;
+  color: blue;
+}
+
+.dsniu ul {
+  color: black;
+  /* background-color: rosybrown; */
+  font-size: inherit;
+  font-style: oblique;
+  font-size: initial;
+  padding-bottom: px;
+}
+.dsniu li {
+  border-bottom: solid blanchedalmond;
+  margin-bottom: inherit;
+}
+
+.mkmk {
+  position: relative;
+  left: 267px;
+  top: -221px;
+  background-color: #55f1a3;
+  border-radius: 9px;
+  /* overflow: hidden; */
+  display: initial;
+  font-size: 22px;
+  color: blue;
+}
+
+.mkmk img {
+  width: 22px;
+  height: 22px;
+  position: relative;
+}
+
+.reviewstar {
+  width: 22px;
+  height: 22px;
+  position: relative;
+}

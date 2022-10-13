@@ -63,6 +63,7 @@ const CartProvider = (props) => {
     Contact: contactHandler,
   };
   console.log(AllProps);
+
   return (
     <CartContext.Provider value={AllProps}>
       {props.children}
