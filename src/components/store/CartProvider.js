@@ -25,8 +25,14 @@ const CartElements = [
 ];
 
 const CartProvider = (props) => {
+  const initialToken = localStorage.getItem("E-CommerceToken");
   const [Products, setProducts] = useState(CartElements);
   const [TotalAmount, setTotalAmount] = useState(false);
+
+  const [token, setToken] = useState(initialToken);
+
+  const isLogin = !!token;
+  console.log(isLogin);
 
   const AddHandeler = (obj) => {
     for (let i = 0; i < Products.length; i++) {
@@ -57,10 +63,18 @@ const CartProvider = (props) => {
     console.log(response);
   };
 
+  const loginHandler = (response) => {
+    setToken(response);
+    localStorage.setItem("E-CommerceToken", response);
+  };
+
   const AllProps = {
     itemsArray: Products,
     Add: AddHandeler,
     Contact: contactHandler,
+    token: token,
+    login: loginHandler,
+    userIsLogin: isLogin,
   };
   console.log(AllProps);
 

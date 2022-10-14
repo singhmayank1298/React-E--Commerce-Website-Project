@@ -12,3 +12,10 @@ on click on product fetch data on product detail page
 
 
 
+for adding login
+1= add in header login tap
+2=make login page
+3= when click on login button start a function
+4 = in that functiom send post request url should be login
+5= when get a reponse as a token store that token in context and localstorge
+6= before that maintain a state in store and pass a function on login component

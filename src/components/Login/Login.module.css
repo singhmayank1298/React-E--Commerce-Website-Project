@@ -1,0 +1,51 @@
+.bkijuno {
+  background-color: #555e5e;
+  display: table-caption;
+  height: 393px;
+  width: 1550px;
+}
+
+.dsniu {
+  background: radial-gradient(black, transparent);
+  height: 329px;
+  margin: 44px;
+  width: max-content;
+  border-radius: 59px;
+  position: relative;
+  left: 470px;
+}
+
+.control {
+  margin: 10%;
+  position: relative;
+  top: 33px;
+}
+
+.bu {
+  color: #181717;
+  position: relative;
+  left: 185px;
+  background: cornflowerblue;
+  font-size: 19px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.control input {
+  margin: 4%;
+  width: 333px;
+  height: 33px;
+  border-radius: 17px;
+}
+
+.control label {
+  font-size: 22px;
+  position: relative;
+  left: 15px;
+  font-weight: 800;
+  color: cornflowerblue;
+}
+
+.bu:hover {
+  background: greenyellow;
+}

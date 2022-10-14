@@ -12,6 +12,7 @@ import About from "./components/About/About";
 import Home from "./components/Home/Home";
 import Contact from "./components/Contact/Contect";
 import ProductDetailPage from "./components/ProductDetailPage/ProductDetailPage";
+import Login from "./components/Login/Login";
 
 function App() {
   const [CartVisible, setCartVisible] = useState(false);
@@ -36,7 +37,7 @@ function App() {
             <Home></Home>
           </Route>
 
-          <Route path="/store">
+          <Route path="/store" exact>
             <StoreItems></StoreItems>
           </Route>
 
@@ -46,6 +47,10 @@ function App() {
 
           <Route path="/product">
             <ProductDetailPage></ProductDetailPage>
+          </Route>
+
+          <Route path="/login">
+            <Login></Login>
           </Route>
         </Switch>
 
