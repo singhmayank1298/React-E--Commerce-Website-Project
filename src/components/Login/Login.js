@@ -38,9 +38,9 @@ const Login = () => {
       if (response.ok === true) {
         const data = await response.json();
         history.replace("/store");
-        ctx.login(data.idToken);
+        ctx.login(data.idToken, data.email);
 
-        console.log(data.idToken);
+        console.log(data);
       }
     } catch (error) {
       alert(error);

@@ -1,8 +1,9 @@
 .df {
   width: 22%;
   position: relative;
-  left: 66%;
+  left: 233px;
   top: -44px;
+  cursor: pointer;
 }
 
 .df button {

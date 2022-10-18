@@ -4,13 +4,15 @@ import "./CartBox.css";
 import CartItemStructure from "./CartItemStructure";
 import Card from "../UI/Card";
 
-const CartBox = () => {
+const CartBox = (props) => {
   const ctx = useContext(CartContext);
-  console.log(ctx);
+  console.log(ctx.total);
   return (
     <>
       <Card className="Cart">
-        <button className="sdnjsdn">X</button>
+        <button onClick={props.closeCart} className="sdnjsdn">
+          X
+        </button>
         <div>
           <div className="fnidi">
             <h2>Cart</h2>
@@ -24,15 +26,17 @@ const CartBox = () => {
           {ctx.itemsArray.map((x) => {
             return (
               <CartItemStructure
+                key={Math.random()}
                 item={x.title}
                 price={x.price}
                 img={x.imageUrl}
                 quantity={x.quantity}
+                _id={x._id}
               ></CartItemStructure>
             );
           })}
         </div>
-        <div className="vnfdf">Total $ 12</div>
+        <div className="vnfdf">$ {ctx.total}</div>
         <button className="ndndijdf">Purchase</button>
       </Card>
     </>

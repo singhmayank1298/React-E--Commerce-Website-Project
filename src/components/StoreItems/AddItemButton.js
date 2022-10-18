@@ -10,7 +10,7 @@ const AddItemButton = (props) => {
       title: props.title,
       price: props.price,
       imageUrl: props.img,
-      quantity: "1",
+      quantity: Number(1),
       id: props.id,
     };
     ctx.Add(obj);

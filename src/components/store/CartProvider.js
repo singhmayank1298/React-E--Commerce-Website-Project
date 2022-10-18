@@ -1,52 +1,105 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CartContext from "./cart-container";
 
-const CartElements = [
-  {
-    title: "Colors",
-    price: 100,
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
-    quantity: 2,
-  },
-
-  {
-    title: "Black and white Colors",
-    price: 50,
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
-    quantity: 3,
-  },
-
-  {
-    title: "Yellow and Black Colors",
-    price: 70,
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
-    quantity: 1,
-  },
-];
-
 const CartProvider = (props) => {
+  const crudCrudUrl =
+    "https://crudcrud.com/api/7e6a2749bb334ab2a47bdf32940e9836";
   const initialToken = localStorage.getItem("E-CommerceToken");
-  const [Products, setProducts] = useState(CartElements);
-  const [TotalAmount, setTotalAmount] = useState(false);
+  const userEmail = localStorage.getItem("email");
+  const [Products, setProducts] = useState([]);
+  const [TotalAmount, setTotalAmount] = useState(0);
+  const [loginEmail, setLoginEmail] = useState(userEmail);
 
   const [token, setToken] = useState(initialToken);
 
   const isLogin = !!token;
   console.log(isLogin);
 
-  const AddHandeler = (obj) => {
+  const totalAmountHandler = () => {
+    let total = 0;
+    for (let i = 0; i < Products.length; i++) {
+      total = total + Products[i].price;
+    }
+    return setTotalAmount(total);
+  };
+
+  const fetchCartItemsHandeler = async () => {
+    try {
+      const response = await fetch(`${crudCrudUrl}/${loginEmail}`);
+      if (response.ok === false) {
+        throw new Error("not found");
+      }
+      const data = await response.json();
+      await new Promise((resolve, reject) => {
+        /// v,importent thing about Promise
+        for (let i = 0; i < data.length; i++) {
+          Products.push(data[i]);
+        }
+        resolve(Products);
+      });
+
+      totalAmountHandler();
+      console.log(Products);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchCartItemsHandeler();
+  }, []);
+
+  const AddHandeler = async (obj) => {
     for (let i = 0; i < Products.length; i++) {
       if (Products[i].id === obj.id) {
         Products[i].quantity++;
+        Products[i].price = Products[i].price + obj.price;
         console.log(Products);
-        setTotalAmount(!TotalAmount); // it is called toggleing
+
+        totalAmountHandler(); // it is called toggleing
+        fetch(`${crudCrudUrl}/${loginEmail}/${Products[i]._id}`, {
+          method: "PUT",
+          body: JSON.stringify({
+            title: obj.title,
+            price: Products[i].price,
+            imageUrl: obj.imageUrl,
+            quantity: Products[i].quantity,
+            id: obj.id,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
         return;
       }
     }
 
-    setProducts((OldArray) => {
-      return [...OldArray, obj];
-    });
+    const response = await fetch(
+      `${crudCrudUrl}/${loginEmail}`, // v are useing this url 4 places
+      {
+        method: "POST",
+        body: JSON.stringify({
+          title: obj.title,
+          price: obj.price,
+          imageUrl: obj.imageUrl,
+          quantity: obj.quantity,
+          id: obj.id,
+          email: loginEmail,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const data = await response.json();
+    console.log(data);
+
+    // setProducts((oldArray) => {
+    //   return [...oldArray, data];   // bacause it is making clouser thing!!!
+    // });
+    Products.push(data); // try do update manually
+    totalAmountHandler();
+    // console.log(Products);
   };
 
   const contactHandler = async (NewUserContect) => {
@@ -63,9 +116,15 @@ const CartProvider = (props) => {
     console.log(response);
   };
 
-  const loginHandler = (response) => {
-    setToken(response);
-    localStorage.setItem("E-CommerceToken", response);
+  const loginHandler = (token, email) => {
+    setToken(token);
+    const newEmail = email.replace("@", "");
+    const finelEmail = newEmail.replace(".", "");
+    console.log(finelEmail);
+    localStorage.setItem("email", finelEmail);
+    setLoginEmail(finelEmail);
+
+    localStorage.setItem("E-CommerceToken", token);
   };
 
   const AllProps = {
@@ -75,6 +134,11 @@ const CartProvider = (props) => {
     token: token,
     login: loginHandler,
     userIsLogin: isLogin,
+    total: TotalAmount,
+    totalAmount: totalAmountHandler,
+    email: loginEmail,
+    url: crudCrudUrl,
+    // fetchOnLoading: fetchCartItemsHandeler,
   };
   console.log(AllProps);
 

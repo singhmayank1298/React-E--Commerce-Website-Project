@@ -55,6 +55,7 @@ const StoreItems = () => {
         {ProductsArr.map((x) => {
           return (
             <Items
+              key={Math.random()}
               title={x.title}
               price={x.price}
               img={x.imageUrl}

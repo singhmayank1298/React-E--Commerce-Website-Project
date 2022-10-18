@@ -8,6 +8,11 @@ const Header = (props) => {
   const ctx = useContext(CartContext);
   const TotalItemsArray = ctx.itemsArray;
 
+  let loginButton = "Login";
+  if (ctx.userIsLogin === true) {
+    loginButton = "Logout";
+  }
+
   let TotalQuantitys = 0;
   for (let i = 0; i < TotalItemsArray.length; i++) {
     TotalQuantitys = TotalQuantitys + Number(TotalItemsArray[i].quantity);
@@ -28,7 +33,7 @@ const Header = (props) => {
               About
             </NavLink>
             <NavLink activeClassName="active" to="/login">
-              Login
+              {loginButton}
             </NavLink>
             <NavLink activeClassName="active" to="/contact">
               Contact

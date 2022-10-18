@@ -45,6 +45,7 @@ const Home = () => {
           {Array.map((x) => {
             return (
               <Table
+                key={Math.random()}
                 date={x.date}
                 location={x.location}
                 area={x.area}
