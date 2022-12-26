@@ -3,7 +3,7 @@ import CartContext from "./cart-container";
 
 const CartProvider = (props) => {
   const crudCrudUrl =
-    "https://crudcrud.com/api/7e6a2749bb334ab2a47bdf32940e9836";
+    "https://crudcrud.com/api/825330d817914327ab9b697c31938094";
   const initialToken = localStorage.getItem("E-CommerceToken");
   const userEmail = localStorage.getItem("email");
   const [Products, setProducts] = useState([]);
@@ -55,7 +55,6 @@ const CartProvider = (props) => {
         Products[i].quantity++;
         Products[i].price = Products[i].price + obj.price;
         console.log(Products);
-
         totalAmountHandler(); // it is called toggleing
         fetch(`${crudCrudUrl}/${loginEmail}/${Products[i]._id}`, {
           method: "PUT",
